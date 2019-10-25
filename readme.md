@@ -5,8 +5,8 @@
 
 ## Supported branches 
 
-- 1.17.3 [Dockerfile](https://github.com/fifths/nginx/blob/master/1.17.3/alpine3.10/Dockerfile)
-- 1.17.4 [Dockerfile](https://github.com/fifths/nginx/blob/master/1.17.4/alpine3.10/Dockerfile)
+- 1.17: `1.17.3`、`1.17.4`、`1.17.5`
+
 
 ## Getting image
 
