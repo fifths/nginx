@@ -20,10 +20,10 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
         geoip-dev \
         git \
      && git clone --recursive --depth=1 https://github.com/google/ngx_brotli.git \
-     && wget http://nginx.org/download/nginx-1.17.5.tar.gz \
-     && tar -zxvf nginx-1.17.5.tar.gz \
-     && rm -rf nginx-1.17.5.tar.gz \
-     && cd nginx-1.17.5 \
+     && wget http://nginx.org/download/nginx-${NGINX_VERSION}.tar.gz \
+     && tar -zxvf nginx-${NGINX_VERSION}.tar.gz \
+     && rm -rf nginx-${NGINX_VERSION}.tar.gz \
+     && cd nginx-${NGINX_VERSION} \
      && ./configure --prefix=/etc/nginx --sbin-path=/usr/sbin/nginx --modules-path=/usr/lib/nginx/modules \
                     --conf-path=/etc/nginx/nginx.conf --error-log-path=/var/log/nginx/error.log \
                     --http-log-path=/var/log/nginx/access.log --pid-path=/var/run/nginx.pid --lock-path=/var/run/nginx.lock \
@@ -41,7 +41,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
      && make -j$(nproc) \
      && cp objs/ngx_http_brotli_filter_module.so /etc/nginx/modules/ \
      && cp objs/ngx_http_brotli_static_module.so /etc/nginx/modules/ \
-     && cd .. && rm -rf nginx-1.17.5 && rm -rf ngx_brotli \
+     && cd .. && rm -rf nginx-${NGINX_VERSION} && rm -rf ngx_brotli \
      && apk \
         del build-deps \
      && rm -rf /var/cache/apk/* /var/lib/apk/* /etc/apk/cache/* \

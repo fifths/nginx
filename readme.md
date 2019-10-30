@@ -4,7 +4,7 @@
 [![Docker Automated build](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/fifths/nginx)
 
 ## Supported branches 
-
+- 1.16: `1.16.1`
 - 1.17: `1.17.3`、`1.17.4`、`1.17.5`
 
 
